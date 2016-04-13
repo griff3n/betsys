@@ -240,6 +240,7 @@
 				& --help & Hilfefunktion abrufen\\ \\
 			\end{tabular}
 		\end{itemize}
+		Der Befehl ''find . | xargs grep testString'' bewirkt das im aktuelle Verzeichnis in allen Dateien nach testString gesuscht wird
 	\subsection{Quellen}
 		\begin{itemize}
 			\item https://wiki.ubuntuusers.de/man/; Aufgerufen am 12.04.2016
@@ -277,7 +278,19 @@
 		1file1 war die oberste Datei.
 \section{Aufgabe 1.3}
 \subsection{Aufgabenstellung}
+	Laden Sie die Datei dirStruct.tar.gz aus Ilias und entpacken Sie die Datei. L\"oschen Sie mit rm alle entpackten Dateien und Verzeichnisse. Entpacken Sie dirStruckt.tar erneut und wechseln Sie in das Verzeichnis ./rootTest/dir1. Was passiert, wenn Sie alle Dateien mit der Endung .txt l\"oschen wollen und alsBefehl versehentlich rm * .txt (Leerzeichen zwischen ,*' und ''txt'') eingeben? Ist das Ergebnis r\"uckg\"anig zu machen?
 \subsection{Vorbereitung}
+	keine
 \subsection{Durchführung}
+	cd ~/workspace/c/betsys/\\
+	mkdir nr3\\
+	dirStruct.tar.gz aus Ilias herunterladen\\
+	cd nr3\\
+	mv ~/Downloads/dirStruct.tar.gz ~/workspace/c/betsys/nr3/\\
+	tar -xzf dirStruct.tar.gz\\
+	rm -r rootTest\\
+	tar -xzf dirStruct.tar.gz\\
+	cd ./rootTest/dir1\\
+	rm * .txt\\
 \subsection{Fazit}
-\subsection{Quellen}
+	Es werden alle Dateien die im Verzeichnis ./rootTest/dir1 sind gel\"oscht. Das Ergebnis kann nicht r\"uckg\"angig gemacht werden.
