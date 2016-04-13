@@ -260,9 +260,21 @@
 	\subsection{Aufgabenstellung}
 		Legen Sie eine sinnvolle Verzeichnisstruktur f\"ur das Praktikum in Ihrem Home-Verzeichnis an und wechseln Sie in Ihr Arbeitsverzeichnis f\"ur diese \"Ubung. Kopieren Sie die Datei file.tar.gz aus Ilias in Ihr Arbeitsverzeichnis und entpacken Sie die Datei dort. Machen Sie sich anhand der entpackten Dateien mit dem Metazeichen vertraut. Bestimmen Sie mit dem ls-Kommando die oberste Datei in Ihren Arbeitsverzeichnis und l\"oschen Sie diese mit rm (verwenden Sie f\"ur die Bestimmung der obersten Datei den Befehl head).
 	\subsection{Vorbereitung}
+		Manpage zu head lesen.
 	\subsection{Durchführung}
+		cd ~/workspace/c/\\
+		git clone git@git01-ifm-min.ad.fh-bielefeld.de:pdick4/betsys.git\\
+		cd betsys\\
+		git checkout p01\\
+		mkdir nr2\\
+		file.tar.gz aus Ilias herunterladen\\
+		mv ~/Downloads/file.tar.gz ~/workspace/c/betsys/nr2/\\
+		cd nr2\\
+		tar -xzf file.tar.gz\\
+		ls | head -n 1\\
+		rm 1file1\\
 	\subsection{Fazit}
-	\subsection{Quellen}
+		1file1 war die oberste Datei.
 \section{Aufgabe 1.3}
 \subsection{Aufgabenstellung}
 \subsection{Vorbereitung}
