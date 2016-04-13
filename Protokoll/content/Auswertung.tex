@@ -33,6 +33,8 @@
 		\begin{itemize}
 			\item man\\
 			Mit den Befehl ''man'' kann man Manpages \"offen. Manpages sind Hilfeseiten.\\ \\
+			Funktion:\\
+			man [OPTION] THEMA\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-k Schl\"usselwort & zur Suche von Manual-Seiten mit einen bestimmten Schl\"usselwort \\
@@ -56,8 +58,11 @@
 			Die Eingabe f\"ur den Aufruf von less mit dem Thema (1) sieht so aus: \begin{quote}
 				man 1 less
 			\end{quote}
+			\newpage
 			\item pwd\\
 			\textbf{p}rint \textbf{w}orkink \textbf{d}irectory gibt das aktuelle Verzeichnis aus, in dem man sich befindet.\\ \\
+			Funktion:\\
+			pwd [OPTION]\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-P & ein etwaiger symbolischer Link wird aufgel\"ost\\
@@ -66,6 +71,8 @@
 			\end{tabular}
 			\item ls \\
 			\textbf{ls} steht f\"ur \textbf{l}i\textbf{s}t und zeigt den Inhalt eines Verzeichnisses bzw. Ordners an.\\ \\
+			Funktion:\\
+			ls [OPTION] [VERZEICHNIS]\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-a & listet Namen die mit .(Punkt) beginnen mit auf\\
@@ -83,8 +90,11 @@
 			Gibt die Datei-Informationen in Langform aus.\\ \\
 			\item ls -al\\
 			Gibt die Datei-Informationen in Langform aus (auch Versteckte Dateien).\\ \\
+			\newpage
 			\item cd\\
 			\textbf{cd} steht f\"ur \textbf{c}hange \textbf{d}irectory und dient zum Wechsel in ein (Unter-)Verzeichnis.\\ \\
+			Funktion:\\
+			cd [OPTION] VERZEICHNIS\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-L & cd folgt der logischen Verzeichnisstruktur (Standard)\\
@@ -92,6 +102,8 @@
 			\end{tabular}
 			\item mkdir\\
 			\textbf{mkdir} steht f\"ur \textbf{m}a\textbf{k}e \textbf{dir}ectory und dient zum Anlegen von einem oder mehreren Verzeichnissen.\\  \\
+			Funktion:\\
+			mkdir [OPTION] VERZEICHNISNAME\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-m oder --mode=MODUS & Zugriffsrechte setzen wie bei chmod\\
@@ -99,9 +111,10 @@
 				 & übergeordnete Verzeichnissen erzeugen, wenn notwendig\\
 				-v oder --verbose & eine Meldung beim erstellen ausgeben\\ \\
 			\end{tabular}
-			\newpage
 			\item rm\\
 			\textbf{rm} steht f\"ur \textbf{r}e\textbf{m}ove und l\"oscht Dateien oder auch komplette Verzeichnisse. !! Nicht Wiederherstellbar\\ \\
+			Funktion:\\
+			rm [OPTION] DATEI/ORDNER\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-i oder --interactive & vor dem L\"oschen eine Nachfrage ''J/N`` ausl\"osen\\
@@ -114,8 +127,11 @@
 				-r oder -R oder --recursive & Verzeichnisse und deren Inhalte rekursiv entfernen\\
 				-f oder --force & keine Nachfrage beim L\"oschen\\ \\
 			\end{tabular}
+			\newpage
 			\item cp\\
 			\textbf{cp} steht für \textbf{c}o\textbf{p}y und ist der Befehl zum Kopieren von Dateien und Verzeichnissen.\\ \\
+			Funktion:\\
+			cp [OPTION] QUELLE ZIEL\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-a oder --archive & Beibehaltung von Besitzer-, Gruppen- und\\
@@ -139,17 +155,21 @@
 				-u oder --update & kopiert nur, wenn Zieldatei \"alter als Quelldatei\\
 				-v oder --verbose & zeigt den Kopierfortschritt an\\ \\
 			\end{tabular}
-			\newpage
 			\item mv\\
 			\textbf{mv} steht für \textbf{m}o\textbf{v}e und verschiebt eine Datei, wobei der Befehl teilweise auch zum Umbenennen verwendet wird.\\ \\
+			Funktion:\\
+			mv [OPTION] QUELLE ZIEL\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-i oder --interactive & fragt vor \"Uberschreiben nach\\
 				-u oder --update & verschiebt nur, wenn Zieldatei \"alter als Quelldatei\\
 				-v oder --verbose & zeigt den Verschiebe-Fortschritt an\\ \\
 			\end{tabular}
+			\newpage
 			\item more\\
 			\textbf{more} ist ein Pager zum Anzeigen von (Text-)Dateien in der Kommandozeile.\\ \\
+			Funktion:\\
+			more [OPTION] DATEI\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-num Zahl & Es werden ''Zahl'' Zeilen pro Seite angezeigt (anstatt volle Seite).\\
@@ -168,6 +188,8 @@
 			\newpage
 			\item tar\\
 			\textbf{tar} steht f\"ur \textbf{T}ape \textbf{ar}chiver und ist ein Werkzeug mit dem Dateien archiviert werden k\"onnen.\\ \\
+			Funktion:\\
+			tar [OPTION] DATEI(EN)\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-c & Ein neues Archiv erzeugen.\\
@@ -189,8 +211,11 @@
 				-L & Medium wechseln, wenn ZAHL KBytes geschrieben sind.\\
 				-W & Archiv nach dem Schreiben pr\"ufen.\\ \\ 
 			\end{tabular}
+			\newpage
 			\item gzip\\
 			\textbf{gzip} steht f\"ur \textbf{G}UU \textbf{zip} und ist ein Werkzeug mit dem Dateien archiviert werden k\"onnen.\\ \\
+			Funktion:\\
+			gzip [OPTION] DATEI(EN)\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-1 ... -9 & Gibt den Komprimierungsgrad an. 1 ist die schlechteste aber schnellste\\
@@ -207,9 +232,10 @@
 				-t & Testet die Integrit\"at des Archivs.\\
 				-h & Zeigt eine vollst\"andige \"Ubersicht über alle Optionen.\\ \\ 
 			\end{tabular}
-			\newpage
 			\item top\\
 			Der Befehl \textbf{top} zeigt eine dynamische \"Ubersicht der auf dem System laufenden Prozesse und die Systemressourcen an\\ \\
+			Funktion:\\
+			top [OPTION]\\ \\
 			\begin{tabular}{ll}
 				Option & Bedeutung \\
 				-b & Startet top im ''Batch''-Modus. Tastatureingaben werden\\
@@ -225,8 +251,11 @@
 				-p PID1 -p PID2 ... & Zeigt nur Prozesse mit den angegeben Prozess-IDs an\\
 				-S & Zeigt die absolute Zeit an, seit der Prozess gestartet wurde\\ \\
 			\end{tabular}
+			\newpage
 			\item uname\\
 			Mit dem Befehl \textbf{uname} kann man sich einige Systeminformationen zum Kernel ausgeben lassen.\\
+			Funktion:\\
+			uname [OPTION]...\\ \\
 			\begin{tabular}{lll}
 				Option & & Bedeutung \\
 				-a & --all & alle Informationen\\
@@ -276,6 +305,7 @@
 		rm 1file1\\
 	\subsection{Fazit}
 		1file1 war die oberste Datei.
+\newpage
 \section{Aufgabe 1.3}
 \subsection{Aufgabenstellung}
 	Laden Sie die Datei dirStruct.tar.gz aus Ilias und entpacken Sie die Datei. L\"oschen Sie mit rm alle entpackten Dateien und Verzeichnisse. Entpacken Sie dirStruckt.tar erneut und wechseln Sie in das Verzeichnis ./rootTest/dir1. Was passiert, wenn Sie alle Dateien mit der Endung .txt l\"oschen wollen und alsBefehl versehentlich rm * .txt (Leerzeichen zwischen ,*' und ''txt'') eingeben? Ist das Ergebnis r\"uckg\"anig zu machen?
