@@ -1,12 +1,49 @@
 \newpage
 
-\paragraph{\LARGE Protokoll 1}
+\paragraph{\LARGE Aufgabe 2 - Flusskontrolle in der Bash}
 
-\section{Aufgabe 1}
+\section{Aufgabe 2.1}
+	\subsection{Aufgabenstellung}
+		\begin{quote}
+			Schreiben Sie ein Shell-Skript das mit Hilfe von Alternativen folgende Informationen zu\\
+			einen Pfadnamen (relatix oder absolut), der als Argument \"ubergeben wird, ausgibt:\\ \\
+			\begin{itemize}
+				\item die Datei oder das Verzeichnis existiert oder nicht;\\
+				\item es handelt sich um eine regul\"are Datei oder ein Verzeichnis;\\
+				\item es handelt sich um einen symbolischen Link;\\
+				\item der Aufrufer ist der Besitzer der Datei;\\
+				\item den Besitzer der Datei oder des Verzeichnisses.\\ \\
+			\end{itemize}
+			Die einzelnen \"Uberpr\"ufungen sollen dabei jeweils als Funktionen realisiert werden.\\
+			Verwenden Sie f\"ur die Tests die Ausdr\"ucke wie sie im Kapitel 7.1 des Bash Beginners Guide\\
+			angegeben sind. (Bemerkung: Sie k\"onnen z.B. den cut Befehl, den awk Befehl, den sed\\
+			Befehl oder . . . verwenden)\\ \\
+		\end{quote}
 	\subsection{Vorbereitung}
-	
+		\begin{quote}
+			Kapitel 7.1 des Bash Beginners Guide lesen und sich \"uber shellskripting informieren.\\ \\
+		\end{quote}
 	\subsection{Durchführung}
-	
+		\begin{quote}
+			 Skript schreiben und dann testen.\\ \\
+		\end{quote}
 	\subsection{Fazit}
-	
-\section{Quellen}
+		\begin{quote}
+			Mit dem Operator -e des Test-Kommandos kann man pr\"ufen ob die Datei existiert.\\
+			Mit dem Operator -d des Test-Kommandos kann man pr\"ufen ob die Datei ein Verzeichnis ist.\\
+			Mit dem Operator -f des Test-Kommandos kann man pr\"ufen ob die Datei eine regul\"are Datei ist.\\
+			Mit dem Operator -h des Test-Kommandos kann man pr\"ufen ob die Datei ein symbolischer Link ist.\\
+			Mit dem Operator -O des Test-Kommandos kann man pr\"ufen ob der Aufrufer der Besitzer der Datei ist.\\
+			Mit dem Befehl: \\ \\
+			\begin{quote}
+				ls -la | grep FILE | cat -d" " -f4\\ \\
+			\end{quote}
+			wird der Besitzer der Datei ausgegeben.\\ \\
+		\end{quote}
+	\subsection{Quellen}
+		\begin{quote}
+			\begin{itemize}
+				\item http://tldp.org/LDP/Bash-Beginners-Guide/html/sect\_07\_01.html Zugriff: 19.04.2016\\
+				\item https://wiki.ubuntuusers.de/Shell/Bash-Skripting-Guide\_f\%C3\%BCr\_Anf\%C3\%A4nger/ Zugriff: 19.04.2016\\
+			\end{itemize}
+		\end{quote}
