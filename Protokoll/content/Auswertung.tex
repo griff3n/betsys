@@ -36,7 +36,7 @@
 			Mit dem Operator -O des Test-Kommandos kann man pr\"ufen ob der Aufrufer der Besitzer der Datei ist.\\
 			Mit dem Befehl: \\ \\
 			\begin{quote}
-				ls -lad FILE | cat -d" " -f4\\ \\
+				ls -lad FILE | cat -d'' '' -f4\\ \\
 			\end{quote}
 			wird der Besitzer der Datei ausgegeben.\\ \\
 		\end{quote}
@@ -68,4 +68,36 @@
 		\begin{quote}
 			Wenn die Liste bei einer for Schleife weggelssen wird dann wird automatisch die Shell-Variable \$@ verwendet.\\
 			Es muss nur noch bei jeden Schleifendurchlauf das Skript aus Aufgabe 1 mit ein Parameter aufgerufen werden.\\
+		\end{quote}
+\newpage
+\section{Aufgabe 2.3}
+	\subsection{Aufgabenstellung}
+		\begin{quote}
+			Erweitern Sie das Skript aus 2. so, dass nach der Ausgabe der Informationen zu der Datei\\
+			eine Pr\"ufung der Dateiendung erfolgt. Endet die Datei auf .txt, so wird der Nutzer in\\
+			einem Dialog gefragt, ob er die Datei angezeigt haben m\"ochte oder nicht. Im positiven\\
+			Fall wird die Datei mit den Ihnen bekannten UNIX-Kommandos auf der Shell ausgegeben.\\ \\
+		\end{quote}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			Aufgabe 1 und Aufgabe 2 l\"osen.\\ \\
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Skript schreiben und dann testen.\\ \\
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			Mit dieser Zeile:\\ \\
+			\begin{quote}
+				txt=\$\{file\#\#*.\}\\ \\
+			\end{quote}
+			wird bezweckt dass alles was links vom Punkt ist weg geschnitten wird.\\
+			Danach wird gepr\"uft op der daraus resultierende String \"aquivalent mit den String txt ist.\\  
+			Wenn der String gleich ist wird mit den Befehl:\\ \\
+			\begin{quote}
+				d -p ''\$file ist ein Textdokument soll sie angezeigt werden.\\ Ja/Nein'' answer\\ \\
+			\end{quote}
+			gefragt ob die Datei angezeigt werden soll.\\
+			Wenn der Benutzer mit Ja antwortet dann wird die Datei mit less angezeigt\\
 		\end{quote}
