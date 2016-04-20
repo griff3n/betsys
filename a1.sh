@@ -49,7 +49,7 @@ besitzer() {
   file="$1"
   if [ -e "$file" ]
     then
-      user=$(ls -la  | grep $file | cut -d" " -f4)
+      user=$(ls -lad $file | cut -d" " -f4)
       echo "$user besitzt die Datei."
     else
       echo "Datei existiert nicht."
