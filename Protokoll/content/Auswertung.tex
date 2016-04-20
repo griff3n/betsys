@@ -36,7 +36,7 @@
 			Mit dem Operator -O des Test-Kommandos kann man pr\"ufen ob der Aufrufer der Besitzer der Datei ist.\\
 			Mit dem Befehl: \\ \\
 			\begin{quote}
-				ls -la | grep FILE | cat -d" " -f4\\ \\
+				ls -lad FILE | cat -d" " -f4\\ \\
 			\end{quote}
 			wird der Besitzer der Datei ausgegeben.\\ \\
 		\end{quote}
@@ -46,4 +46,26 @@
 				\item http://tldp.org/LDP/Bash-Beginners-Guide/html/sect\_07\_01.html Zugriff: 19.04.2016\\
 				\item https://wiki.ubuntuusers.de/Shell/Bash-Skripting-Guide\_f\%C3\%BCr\_Anf\%C3\%A4nger/ Zugriff: 19.04.2016\\
 			\end{itemize}
+		\end{quote}
+\newpage
+\section{Aufgabe 2.2}
+	\subsection{Aufgabenstellung}
+		\begin{quote}
+			Erweitern Sie dieses Shell-Skript, so dass der Aufrufer eine beliebige Anzahl von\\
+			Pfadnamen \"ubergeben kann, die in einer Schleife (for oder while) abgearbeitet werden.\\
+			Verwenden Sie die Shell-Variable \$@ f\"ur die Liste der Argumente des Skripts.\\
+			Testen Sie Ihr Skript mit verschiedenen Eingaben.\\ \\
+		\end{quote}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			Aufgabe 1 l\"osen.\\ \\
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Skript schreiben und dann testen.\\ \\
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			Wenn die Liste bei einer for Schleife weggelssen wird dann wird automatisch die Shell-Variable \$@ verwendet.\\
+			Es muss nur noch bei jeden Schleifendurchlauf das Skript aus Aufgabe 1 mit ein Parameter aufgerufen werden.\\
 		\end{quote}
