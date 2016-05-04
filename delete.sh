@@ -1,5 +1,9 @@
 #!/bin/bash
 file="$1"
+if [ ! -d "$HOME/.trashBin/" ]
+	then
+	mkdir "$HOME/.trashBin/"
+fi
 if [ -e "$file" ]
 	then
 	date=$(date '+%y%m%d%H%M%S')
