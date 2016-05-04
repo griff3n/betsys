@@ -4,8 +4,7 @@ if [ -e "$file" ]
 	then
 	date=$(date '+%y%m%d%H%M%S')
 	prozessid=$$
-	mv $file $HOME/.trashBin/$date_$prozessid.dat
-	echo "$date_$prozessid.dat! $file"
-else
-
+	mv $file "$HOME/.trashBin/$date""_$prozessid.dat"
+	echo "$date""_$prozessid.dat! $file" >> $HOME/.trashBin/.dir
+	echo "$date""_$prozessid.dat"
 fi
