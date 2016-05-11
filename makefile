@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-std=c11 -pedantic -Wall -Werror
+CFLAGS=-std=c11 -pedantic -Wall
 CDEBUGFLAGS=-g -O0
 SOURCES=$(addprefix src/, MindenMiniShell.c)
 BIN=bin
@@ -7,7 +7,7 @@ BIN=bin
 
 .PHONY: all compilemain debugmain runmain makedir clean
 
-all: clean runmain
+all: clean debugmain
 
 runmain: compilemain
 	./$(BIN)/MindenMiniShell
