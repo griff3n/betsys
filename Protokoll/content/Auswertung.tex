@@ -20,58 +20,32 @@
 		\end{itemize}
 	\end{quote}
 \newpage
-\section{Aufgabe 4.1}
+\section{Aufgabe 4.1 + Randbedingung 2}
 	\subsection{Vorbereitung}
 		\begin{quote}
-		
+			C-Projekt anlegen.
+			Makefile schreiben.
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
-			
+			Code schreiben und dann testen bzw debuggen.
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
-			
+			Zuerst wird eine Endlosschleife erstellt. Dann wird mit ''user = getenv(''USER'');'' der User ermittelt. Der aktuelle Pfad wird genau so wie eben nur mit der Umgebungsvariable PWD ermittelt. Danach wird gepr\"ft ob der User und der Pfad ermittelt wurde. Mit hilfe von printf wird der Promt dann ausgegeben. Dann wird die Methode readline aufgerufen.  Die Methode readline liest die Zeile mit hilfe der Methode getline ein. Um die Zeile zu parsen wird die Methode parseline Aufgerufen. Die Methode parseline erstellt Tokens mit hilfe der Methode strtok und vordefinierter Seperatoren.
 		\end{quote}
 
-\section{Aufgabe 4.2}
+\section{Aufgabe 4.2 - 4.4 + Randbedingung 1}
 	\subsection{Vorbereitung}
 		\begin{quote}
-			
+			keine
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
-			
+			Code schreiben und dann testen bzw debuggen.
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
-			
-		\end{quote}
-
-\section{Aufgabe 4.3}
-	\subsection{Vorbereitung}
-		\begin{quote}
-			
-		\end{quote}
-	\subsection{Durchführung}
-		\begin{quote}
-			
-		\end{quote}
-	\subsection{Fazit}
-		\begin{quote}
-			
-		\end{quote}
-
-\section{Aufgabe 4.4}
-	\subsection{Vorbereitung}
-		\begin{quote}
-			
-		\end{quote}
-	\subsection{Durchführung}
-		\begin{quote}
-			
-		\end{quote}
-	\subsection{Fazit}
-		\begin{quote}
-			
+			Zuerst wird die Methode execute aufgerufen. Dann wird der Prozess mit fork dupliziert. Beim Kind-Prozess (''if (pid == 0)'') wird das neue Programm mit execvp geladen. Wenn die pid keiner als null ist dann heist das das Forken fehlgeschlagen ist. Der Eltern-Prozess wated mit waitpid so lange bis der Prozess beendet oder Gekillt wurde. Der R\"uckgabe wert ist eins wenn nicht der exit-befehl angegeben wurde.\\ \\
+			Die befehle exit, cd und werden vor dem Fork abgefangen und als Bulit-in-Komanndos aus gefürht, weil diese wichtig f\"r die Shell sind. exit beenndet die Shell. cd und set ver\"andern die die Umgebungsvariablen die f\"ur diesen Prozess zugeordnet sind.
 		\end{quote}
