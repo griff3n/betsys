@@ -100,5 +100,34 @@
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
+			\lstinputlisting[language=C, firstline=13, lastline=23]{../src/myScheduler.c}
+			Hier wird der Job und die JobList definiert.\\
 			
+			\lstinputlisting[language=C, firstline=25, lastline=35]{../src/myScheduler.c}
+			Die Methode vergleicht die Listen Element anhand der Id.\\
+			
+			\lstinputlisting[language=C, firstline=37, lastline=47]{../src/myScheduler.c}
+			Die Methode vergleicht die Listen Element anhand der Laufzeit.\\
+			
+			\lstinputlisting[language=C, firstline=49, lastline=59]{../src/myScheduler.c}
+			Die Methode vergleicht die Listen Element anhand der Priorit\"at.\\
+			
+			\lstinputlisting[language=C, firstline=63, lastline=101]{../src/myScheduler.c}
+			Mit der Methode wird eine Beispielliste erstellt.\\
+			First Come First Served\\
+			\lstinputlisting[language=C, firstline=105, lastline=117]{../src/myScheduler.c}
+			Die Liste wird Element f\"ur Element durch gegangen. Dabei werden die Zeiten aufsummiert(Gesamtzeit und Verweiltezeitgesammt) und die Einzelnen Ausgaben get\"atigt. Am ende wird die Mittlere Verweiltezeit berechnet.\\
+			Shortest Job First\\
+			\lstinputlisting[language=C, firstline=119, lastline=131]{../src/myScheduler.c}
+			Wie bei FCFS nur das die Liste nach Laufzeiten sortiert wird.
+			priorit\"atsgesteuertes Scheduling\\
+			\lstinputlisting[language=C, firstline=133, lastline=145]{../src/myScheduler.c}
+			Wie bei FCFS nur das die Liste nach Priorit\"aten sortiert wird.\\
+			Raund Robin\\
+			\lstinputlisting[language=C, firstline=147, lastline=175]{../src/myScheduler.c}
+			Zuerst wird nach ID sortiert. Dann werden so oft Zeitscheiben abgezogen bis alle Laufzeiten < 1 sind. Die laufzeiten die < 1 sind werden \"bersprungen.\\
+			Round Robin mit Priorit\"aten\\
+			
+			\lstinputlisting[language=C, firstline=177, lastline=204]{../src/myScheduler.c}
+			Wie Round Robin nur die Zeinscheiben sind gleich der Priorit\"at.\\
 		\end{quote}

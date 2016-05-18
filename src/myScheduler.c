@@ -134,7 +134,7 @@ int main(int argc, char **argv) {
 	temp = jobs.head;
 	time = 0;
 	vtime = 0;
-	printf("prioritötsgesteuertes Scheduling\n");
+	printf("priorittsgesteuertes Scheduling\n");
 	while(temp != NULL) {
 		time += temp->laufzeit;
 		vtime += time;
