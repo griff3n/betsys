@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-std=c11 -pedantic -Wall
 CDEBUGFLAGS=-g -O0
-SOURCES=$(addprefix src/, Main.c)
+SOURCES=$(addprefix src/, myScheduler.c)
 BIN=bin
 
 
@@ -10,13 +10,13 @@ BIN=bin
 all: clean debugmain
 
 runmain: compilemain
-	./$(BIN)/MindenMiniShell
+	./$(BIN)/myScheduler
 
 compilemain: makedir
-	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/Main
+	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/myScheduler
 
 debugmain: clean makedir
-	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/Main
+	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/myScheduler
 
 makedir:
 	mkdir -p $(BIN)
