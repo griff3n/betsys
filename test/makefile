@@ -10,13 +10,13 @@ BIN=bin
 all: clean runmain
 
 runmain: compilemain
-	./$(BIN)/main ~/workspace/c/betsys/test 5
+	./$(BIN)/main ~/workspace/c/betsys
 
 compilemain: makedir
-	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/main -lpthread
+	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/main
 
 debugmain: clean makedir
-	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/main -lpthread
+	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/main
 
 makedir:
 	mkdir -p $(BIN)

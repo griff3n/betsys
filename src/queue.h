@@ -28,6 +28,13 @@ struct Node			/* Element der verketteten Liste */
     element value;		/* Wert dieses Elements */
 };
 
+Queue queue_create (void);
+void queue_destroy (Queue queue);
+int queue_insert (Queue queue, element value);
+int queue_delete (Queue queue);
+element queue_head (Queue queue);
+int queue_empty (Queue queue);
+
 /*
  * Neue Schlange anlegen, liefert NULL bei Fehler
  */
