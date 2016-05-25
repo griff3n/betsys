@@ -1,13 +1,22 @@
 \newpage
 
-\paragraph{\LARGE Aufgabe 4 - Implementierung Shell}
+\paragraph{\LARGE Aufgabe 6 - Multi-Threading und Synchronisation}
 
 \section{Aufgabenstellung}
 	\begin{quote}
-		
+		\begin{enumerate}
+			\item Dem Programm wird per Kommandozeile ein Ordnerpfad \"ubergeben.\\
+			\item Arbeiten Sie mit mehreren Threads. Ein Thread (Leser-Thread) liest die Dateien in dem \"ubergebenen Ordner ein und h\"angt den Inhalt sowie den Dateipfad an eine Queue an. Nutzen Sie daf\"ur eine struct Job.\\ 
+			\item Eine zur Compileteit konfigurierbare Anzahl von Threads (Komprimierungs-Thread) liest jeweils einen Job aus der Queue, komprimiert seinen Inhalt und speichert diesen im Format <alter Dateiname>.compr. Dies soll solange wiederholt werden, bis die Queue leer und der Leser-Thread beendet ist.\\
+			\item Der Leser-Thread soll Dateien, die mit .compr enden, ignorieren.\\
+			\item Ein Komprimierungs-Thread bekommt bei seiner Erstellung als Parameter eine Instanznummer zugeordnet, die ihn z.B. bei Debug-Ausgaben eindeutig identifiziert.\\
+			\item Die Zugriffe auf die Queue m\"ussen synchronisiert, d.h. gegeneinander gesch\"utzt sein.\\
+			\item F\"ugen Sie im Leser-Thread nach dem Einlesen einer Datei ein sleep(1) und in den Kompressions-Threads nach den Komprimieren ein sleep(3) ein, um eine langsame Festplatte und einen komplexen Kompressionsalgorithmus zu simulieren. Beobachten Sie, wie ihr Programm mit und ohne die sleep-Anweisungen arbeitet.\\
+			\item Bestimmen Sie n\"aherungsweise die Laufzeit bei unterschiedlicher Anzahl von Kompressions-Threads, z. B. mit der Funktion difftime() in main()\\
+		\end{enumerate}
 	\end{quote}
 \newpage
-\section{Aufgabe 4.1}
+\section{Aufgabe 6.1}
 	\subsection{Vorbereitung}
 		\begin{quote}
 			C-Projekt anlegen.
@@ -22,7 +31,7 @@
 			
 		\end{quote}
 
-\section{Aufgabe 4.2}
+\section{Aufgabe 6.2}
 	\subsection{Vorbereitung}
 		\begin{quote}
 			keine
@@ -35,3 +44,88 @@
 		\begin{quote}
 			
 		\end{quote}
+
+\section{Aufgabe 6.3}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			keine
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Code schreiben und dann testen bzw debuggen.
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			
+		\end{quote}
+
+\section{Aufgabe 6.4}
+\subsection{Vorbereitung}
+\begin{quote}
+	keine
+\end{quote}
+\subsection{Durchführung}
+\begin{quote}
+	Code schreiben und dann testen bzw debuggen.
+\end{quote}
+\subsection{Fazit}
+\begin{quote}
+	
+\end{quote}
+
+\section{Aufgabe 6.5}
+\subsection{Vorbereitung}
+\begin{quote}
+	keine
+\end{quote}
+\subsection{Durchführung}
+\begin{quote}
+	Code schreiben und dann testen bzw debuggen.
+\end{quote}
+\subsection{Fazit}
+\begin{quote}
+	
+\end{quote}
+
+\section{Aufgabe 6.6}
+\subsection{Vorbereitung}
+\begin{quote}
+	keine
+\end{quote}
+\subsection{Durchführung}
+\begin{quote}
+	Code schreiben und dann testen bzw debuggen.
+\end{quote}
+\subsection{Fazit}
+\begin{quote}
+	
+\end{quote}
+
+\section{Aufgabe 6.7}
+\subsection{Vorbereitung}
+\begin{quote}
+	keine
+\end{quote}
+\subsection{Durchführung}
+\begin{quote}
+	Code schreiben und dann testen bzw debuggen.
+\end{quote}
+\subsection{Fazit}
+\begin{quote}
+	
+\end{quote}
+
+
+\section{Aufgabe 6.8}
+\subsection{Vorbereitung}
+\begin{quote}
+	keine
+\end{quote}
+\subsection{Durchführung}
+\begin{quote}
+	Code schreiben und dann testen bzw debuggen.
+\end{quote}
+\subsection{Fazit}
+\begin{quote}
+	
+\end{quote}
