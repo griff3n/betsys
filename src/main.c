@@ -39,8 +39,8 @@ int main(int argc, char *argv[]) {
 	} else if (argc == 2) {
 		theads = 3;
 	}
-	pthread_t lthread, kthread[theads];
 	theads = atoi(argv[2]);
+	pthread_t lthread, kthread[theads];
 	joblist.jobs = queue_create();
 	char *dirname = argv[1];
 	printf("Ordner: %s\n", dirname);
