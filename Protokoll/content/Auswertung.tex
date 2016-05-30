@@ -1,35 +1,53 @@
 \newpage
 
-\paragraph{\LARGE Aufgabe 4 - Implementierung Shell}
+\paragraph{\LARGE Aufgabe 7 - Verzeichnisse}
 
 \section{Aufgabenstellung}
-	\begin{quote}
-		
-	\end{quote}
+	\subsection{Aufgabe 1: Typische Verzeichnisstrukturen}
+		\begin{quote}
+			\begin{itemize}
+				\item Geben Sie die typische Verzeichnisstruktur einer aktuellen Linuxdistribution an. Was ist in den Verzeichnissen enthalten? Nennen Sie mindenstens f\"unf Beispiele (wie /etc, /usr usw.). Finden Sie zus\"atzlich heraus, wo Log-Dateien gespeichert werden. Wo liegen ausgelagerte Inhalte des Hauptspeichers?\\
+				\item Geben Sie die typische Ordnerstruktur von Microsoft Windows an. Nennen Sie analog zur vor vorherigen Aufgabe einige beispielhafte Inhalte der jeweiligen Verzeichnisse (wie z.B, C:\textbackslash Windows\textbackslash System32).\\
+			\end{itemize}
+		\end{quote}
+	\subsection{Aufgabe 2: Verzeichnisse}
+		\begin{quote}
+			Entwickeln Sie ein Programm myls, das den Inhalt von Verzeichnissen ausgibt. Die grundlegende Funktion ist in etwa vergleichbar mit dem Shell-Kommando ls.\\ \\
+			Randbedingungen: \\
+			\begin{itemize}
+				\item Der Name des auszulesenden Verzeichnisses soll dem Programm als Argument \"ubergeben werden. Wird kein Verzeichnis angegeben, so wird das lokale Verzeichnis ausgegeben.\\
+				\item Sie sollen die Funktionen opendir(), readdir() und closedir() verwenden, um die Eintr\"age des Verzeichnisses abzufragen.\\
+				\item F\"ur den Zugriff auf Informationen zu den Eintr\"agen kann die Funktion lstat() verwendet werden. Diese lifert deterillierte Informationen zu jedem Verzeichniseintrag. Sie sollen mindestens die Attribute abragen und ausgeben, die bei Eingabe des Befehls ls -algo auf UNIX / Linux-System ausgegeben werden.\\
+				\item Ihr Programm soll hinsichtlich der beiden Optionen -a und -l parametrisierbar sein die beiden Parameter k\"onnen auch zusammen angewendet werden, also myls -a -l oder myls -al. Hinsichtlich der Bedeutung der Parameter k\"onnen Sie sich an dem Standard-UNIX/Linux-Kommando orientieren.\\
+				\item Verwenden Sie getopt(), um die Ausgabeparameter von der Kommandozeile einzulesen.\\
+				\item Ihr Programm braucht keine weiteren Argumente oder Parameter zu unterst\"utzen.\\
+				\item Geben Sie bei gesetzter Option -l den Namen ausf\"uhrbarer Dareien in rot und den Namen von C-Dateien (Dateiendung: .c) in gr\"un aus. Nutzen Sie f\"ur die Einf\"arbung von Verzeichniseintr\"agen Escape Sequenzen, die Sie beispielsweise unter http://www.linupedia.org/opensuse/Farbe\_in\_der\_Konsole finden.\\
+			\end{itemize}
+		\end{quote}
 \newpage
-\section{Aufgabe 4.1}
+\section{Aufgabe 7.1}
 	\subsection{Vorbereitung}
 		\begin{quote}
-			C-Projekt anlegen.
-			Makefile schreiben.
+			
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
+			
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
 			
 		\end{quote}
 
-\section{Aufgabe 4.2}
+\section{Aufgabe 7.2}
 	\subsection{Vorbereitung}
 		\begin{quote}
-			keine
+			C-Projekt anlegen.\\
+			Makefile schreiben.\\
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
+			Code schreiben und dann testen bzw debuggen.\\
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
