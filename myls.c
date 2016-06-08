@@ -8,13 +8,11 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include <time.h>
 #include <ctype.h>
 #include <unistd.h>
 #include <getopt.h>
 #include <dirent.h>
-
 
 void printFile(char *name);
 
@@ -103,11 +101,9 @@ void printFile(char *name) {
 	}
 	if(sb.st_mode & S_IEXEC) {
 		printf ("\033[0;0;31m %s \033[0m\t\t", name);
-	}
-	else if (dateiendung != 0 && !strcmp(dateiendung, ".c")) {
+	} else if (strcmp(dateiendung, ".c")) {
 		printf ("\033[0;0;32m %s \033[0m\t\t", name);
-	}
-	else {
+	}else {
 		printf ("%s\t\t", name);
 	}
 	if(S_ISBLK(sb.st_mode)) {
@@ -145,5 +141,4 @@ void printFile(char *name) {
 	printf("%ld ", (long) sb.st_nlink);
 	printf("%lld bytes ",(long long) sb.st_size);
 	printf("%s", ctime(&sb.st_mtime));
-	//free(dateiendung);
 }

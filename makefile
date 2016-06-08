@@ -10,7 +10,7 @@ BIN=bin
 all: clean runmain
 
 runmain: compilemain
-	./$(BIN)/myls
+	./$(BIN)/myls -al /home/peter/workspace/c/betsys
 
 compilemain: makedir
 	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/myls
