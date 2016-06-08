@@ -80,5 +80,64 @@
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
+			Randbedingung 1:\\ \\
+			\tiny\lstinputlisting[language=C, firstline=21, lastline=53]{../src/myls.c}
+			In der Variable ''argv'' sind  die Kommandozeilenparameter die \"ubergeben sind gespeichert. Dann wird mit ''getopt'' die Flags abgearbeitet. In der Variable ''optind'' (Zeile 48) ist der Index f\"ur das Element nach dem letzten Flag gespeichert.  Ist der index kleiner als die in ''argc'' \"ubergebene Anzahl dann wird das entsprechende Argument aus ''argv'' in path gespeichert. Ansonsten wird ein Standard-Pfad mit ''getenv(''PWD'')'' gesetzt.\\ \\
 			
+			Randbedingung 2:\\ \\
+			\tiny\lstinputlisting[language=C, firstline=56, lastline=83]{../src/myls.c}
+			Mit ''DIR *dir = opendir(path);'' wird das Verzeichniss de\"offnet. Dann wird mit ''dirptr = readdir(dir);'' ein Element des Verzeichnisses eingelesen und dann ausgegeben. Das  wird solange wiederholt bis ''dirptr'' gleich NULL ist. Dann wird mit ''closedir(dir)'' das Verzeichnis geschlossen.\\ \\
+			
+			Randbedingung 3:\\ \\
+			\tiny\lstinputlisting[language=C, firstline=87, lastline=138]{../src/myls.c}
+			Mit ''lstat(name, \&sb)'' werden die Dateiinformationen in eine struct sb die den Typ stat hat geschrieben. Mit den Makros:\\
+			\begin{itemize}
+				\item S\_ISBLK(sb.st\_mode) f\"r Block Device\\
+				\item S\_ISCHR(sb.st\_mode) f\"r Character Device\\
+				\item S\_ISDIR(sb.st\_mode) f\"r Verzeichnis/Ordner\\
+				\item S\_ISFIFO(sb.st\_mode) f\"r Pipe\\
+				\item S\_ISLNK(sb.st\_mode) f\"r Link\\
+				\item S\_ISREG(sb.st\_mode) f\"r regul\"are Datei\\
+				\item S\_ISSOCK(sb.st\_mode) f\"r Socket\\
+			\end{itemize}
+			wird der Dateityp ermittelt. Dann werden die Berechtigungen ermittelt dabei wird ''sb.st\_mode'' mit den Bitmasken die in ''bits'' stehen und-Verkn\"pft.
+			\tiny\lstinputlisting[language=C, firstline=90, lastline=96]{../src/myls.c}
+			Wenn das Ergebnis nicht null ist wird r, w oder x gesetzt.
+			Die Anzahl der ist in ''sb.st\_nlink'' gespeichert. In ''sb.st\_size'' die Dateigr\"osse und in ''sb.st\_mtime'' das \"Anderungsdatum gespeichert. Alle Daten werden mit printf() ausgegeben.\\ \\
+			
+			Randbedingung 4-6:\\ \\
+			\tiny\lstinputlisting[language=C, firstline=23, lastline=47]{../src/myls.c}
+			Zuerst wird solange wie ''c'' ungleich -1 ist mit ''c = getopt (argc, argv, ''lal::'')'' die Flags eingelesen. Der String ''lal::'' erlaubt z. B. folgende eingaben:\\
+			\begin{itemize}
+				\item myls\\
+				\item myls <file>\\
+				\item myls -a\\
+				\item myls -l\\
+				\item myls -al\\
+				\item myls -la\\
+				\item myls -a -l\\
+				\item myls -l -a\\
+				\item myls -a <file>\\
+				\item myls -l <file>\\
+				\item myls -al <file>\\
+				\item myls -la <file>\\
+				\item myls -a -l <file>\\
+				\item myls -l -a <file>\\
+			\end{itemize}
+			Mit einen switch csae Konstrukt werden dann die Flags ''aflag'' und ''lflag'' gesetzt bzw nicht gesetzt.
+			
+			Randbedingung 7:\\ \\
+			\tiny\lstinputlisting[language=C, firstline=100, lastline=106]{../src/myls.c}
+			Mit ''sb.st\_mode \& S\_IEXEC'' wird ermittelt ob die Datei aus\"uhrbar ist. Mit ''char *dateiendung = strrchr(name, '.');'' wird die Dateiendung ermittelt. Die wird mit dem String ''.c'' verglichen(strcmp). Die Mit einer Escape-Sequenz die Farbe bestimmt. Sie f\"angt mit ''\textbackslash 033{[}'' an und endet mit ''m''
+			Dazwischen ist die Hintergrundfarbe, Codes f\"ur Textattribute und die Vordergrundfarbe. Die Codes sind mit Semikolon getrennt. 31 steht f\"ur rot und 32 f\"ur gr\"un. Nach dem der Name eingef\"arbt wurde wird mit der Escape-Sequenz ''\textbackslash 033{[}0m'' die Standard Einstellungen wiederhergestellt.\\ \\
 		\end{quote}
+\section{Quellen}
+	\begin{itemize}
+		\item https://wiki.ubuntuusers.de/Verzeichnisstruktur/ Aufruf: 08.06.16\\
+		\item http://www.gnu.org/software/libc/manual/html\_node/Using-Getopt.html\#Using-Getopt Aufruf: 08.06.16\\
+		\item http://www.gnu.org/software/libc/manual/html\_node/Example-of-Getopt.html\#Example-of-Getopt Aufruf: 08.06.16\\
+		\item https://wiki.ubuntuusers.de/ls/ Aufruf: 08.06.16\\
+		\item http://openbook.rheinwerk-verlag.de/c\_von\_a\_bis\_z/017\_c\_dateien\_verzeichnisse\_001.htm Aufruf: 08.06.16\\
+		\item http://linux.die.net/man/2/lstat Aufruf: 08.06.16\\
+		\item http://www.linupedia.org/opensuse/Farbe\_in\_der\_Konsole Aufruf: 08.06.16\\
+	\end{itemize}
