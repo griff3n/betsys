@@ -15,9 +15,7 @@
 #include <getopt.h>
 #include <dirent.h>
 
-
 void printFile(char *name);
-
 char *path;
 
 int main(int argc, char **argv) {
@@ -27,7 +25,6 @@ int main(int argc, char **argv) {
 	int index;
 	int c;
 	struct dirent *dirptr;
-
 
 	opterr = 0;
 	while ((c = getopt (argc, argv, "lal::")) != -1)
@@ -55,7 +52,7 @@ int main(int argc, char **argv) {
 		path = getenv("PWD");
 	}
 	printf ("aflag = %d, lflag = %d\n",aflag, lflag);
-	printf ("Non-option argument %s\n", path);
+	printf ("Path %s\n", path);
 	DIR *dir = opendir(path);
 	if(dir == NULL) {
 		fprintf(stderr,"Fehler beim oeffnen der Datei.");
@@ -98,52 +95,44 @@ void printFile(char *name) {
 			S_IROTH,S_IWOTH,S_IXOTH    /* Zugriffsrechte der Rest */
 	};
 	if (lstat(name, &sb) == -1) {
-		perror("stat");
-		exit(EXIT_FAILURE);
+		perror("Fehler beim Dateiinformationen auslesen.");
 	}
 	if(sb.st_mode & S_IEXEC) {
 		printf ("\033[0;0;31m %s \033[0m\t\t", name);
-	}
-	else if (dateiendung != 0 && !strcmp(dateiendung, ".c")) {
+	} else if (dateiendung != 0 && !strcmp(dateiendung, ".c")) {
 		printf ("\033[0;0;32m %s \033[0m\t\t", name);
-	}
-	else {
+	} else {
 		printf ("%s\t\t", name);
 	}
 	if(S_ISBLK(sb.st_mode)) {
 		printf("b");
-	}
-	else if(S_ISCHR(sb.st_mode)) {
+	} else if(S_ISCHR(sb.st_mode)) {
 		printf("c");
-	}
-	else if(S_ISDIR(sb.st_mode)) {
+	} else if(S_ISDIR(sb.st_mode)) {
 		printf("d");
-	}
-	else if(S_ISFIFO(sb.st_mode)) {
+	} else if(S_ISFIFO(sb.st_mode)) {
 		printf("p");
-	}
-	else if(S_ISLNK(sb.st_mode)) {
+	} else if(S_ISLNK(sb.st_mode)) {
 		printf("l");
-	}
-	else if(S_ISREG(sb.st_mode)) {
+	} else if(S_ISREG(sb.st_mode)) {
 		printf("-");
-	}
-	else if(S_ISSOCK(sb.st_mode)) {
+	} else if(S_ISSOCK(sb.st_mode)) {
 		printf("s");
 	} else {
 		printf("-");
 	}
 	for(int i = 0; i < 9; i++) {
 		/* wenn nicht 0, dann gesetzt */
-		if(sb.st_mode & bits[i])
+		if(sb.st_mode & bits[i]) {
 			l_rwx[i]=rwx[i];  /*r,w oder x*/
-		else
-			l_rwx[i] = '-'; /*wenn nicht gesetzt, dann '-'*/
+		}
+		else {
+			l_rwx[i] = '-';
+		}
 	}
 	l_rwx[9]='\0';
 	printf("%s ",l_rwx);
 	printf("%ld ", (long) sb.st_nlink);
 	printf("%lld bytes ",(long long) sb.st_size);
 	printf("%s", ctime(&sb.st_mtime));
-	//free(dateiendung);
 }
