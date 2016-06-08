@@ -1,22 +1,22 @@
 CC=gcc
 CFLAGS=-std=c11 -pedantic -Wall
 CDEBUGFLAGS=-g -O0
-SOURCES=$(addprefix src/, Main.c)
+SOURCES=$(addprefix src/, myls.c)
 BIN=bin
 
 
 .PHONY: all compilemain debugmain runmain makedir clean
 
-all: clean debugmain
+all: clean runmain
 
 runmain: compilemain
-	./$(BIN)/MindenMiniShell
+	./$(BIN)/myls
 
 compilemain: makedir
-	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/Main
+	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/myls
 
 debugmain: clean makedir
-	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/Main
+	$(CC) $(CFLAGS) $(CDEBUGFLAGS) $(SOURCES) -o $(BIN)/myls
 
 makedir:
 	mkdir -p $(BIN)
