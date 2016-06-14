@@ -1,35 +1,38 @@
 \newpage
 
-\paragraph{\LARGE Aufgabe 4 - Implementierung Shell}
+\paragraph{\LARGE Aufgabe 8 - Dateisysteme}
 
 \section{Aufgabenstellung}
 	\begin{quote}
-		
+		Impemetieren Sie ein C-Programm, das folgende Anforderungen erf\"ullt:\\ \\
+		\begin{itemize}
+			\item Eine Datei wird zum Lesen ge\"offnet; anschließend wird zuerst die zweite H\"alfte und dann die erste H\"alfte des Dateiinhaltes auf dem Bildschirm ausgegeben.\\
+			\item Danach wird der Inhalt der Datei in eine neue Datei kopiert, wobei der Dateiname der Quell- und der Zieldatei dem Programm als Argument \"ubergeben werden kann.\\
+			\item Die letzten 10 Zeichen der urspr\"unglichen Datei werden ab der 11. Stelle der neuen Datei kopiert. Das Dateiende der neuen Datei soll jetzt nach den verschobenen Daten sein (also nach dem 21. Zeichen).\\
+			\item Der Inhalt der Datei soll auf dem Bildschirm ausgegeben werden.\\
+		\end{itemize}
+		Hinweise:\\ \\
+		\begin{itemize}
+			\item Benutzen Sie f\"ur diese Aufgabe ausschließlich die POSIX Befehle zur Dateibehandlung und zur Bildschirmausgabe.\\
+			\item Die in Frage kommenden POSIX Befehle sind z.B.: open, close, lseek, read, write, ftruncate\\
+			\item Die Standard C-Bibliotheksfunktionen wie z.B. fopen, fprintf, printf usw. d\"urfen in Ihren Programm ausschließlich zu Debugzwecken benutzt werden.\\
+			\item Bildschirmausgabe und Kopieren einer Datei sollen in derselben Funktion realisiert werden. Das Ziel der Operation (Standardausgabe oder Zieldatei) wird der Funktion als Parameter \"ubergeben.\\
+			\item Es sollen keinerlei Beschr\"ankungen \"uber die Gr\"oße der zu kopierenden Inhalte getroffen werden.\\
+			\item Fehlerausgaben (z.B. eine Datei kann nicht ge\"offnet werden) sollen auf stderr erfolgen.\\
+			\item Eine Dokumention der ben\"otigten POSIX Aufrufe finden Sie z.B. hier:\\
+			http://www.opengroup.org/onlinepubs/009695399/functions/contents.html\\
+		\end{itemize}
 	\end{quote}
 \newpage
 \section{Aufgabe 4.1}
 	\subsection{Vorbereitung}
 		\begin{quote}
-			C-Projekt anlegen.
-			Makefile schreiben.
+			C-Projekt anlegen.\\
+			Makefile schreiben.\\
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
-		\end{quote}
-	\subsection{Fazit}
-		\begin{quote}
-			
-		\end{quote}
-
-\section{Aufgabe 4.2}
-	\subsection{Vorbereitung}
-		\begin{quote}
-			keine
-		\end{quote}
-	\subsection{Durchführung}
-		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
+			Code schreiben und dann testen bzw debuggen.\\
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
