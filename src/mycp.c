@@ -9,11 +9,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include <stdio.h>
 
 #define MAXBYTES 1024
 
 int isStdout(const char * arg);
+int strCompare(const char *str1, const char *str2);
 int mycp(const int isstdout, const char *quelldatei, const char *zieldatei);
 
 int main(int argc, char **argv) {
@@ -40,7 +40,12 @@ int main(int argc, char **argv) {
 		quelldatei = argv[2];
 		zieldatei = argv[3];
 	}
-	mycp(isstdout, quelldatei, zieldatei);
+	if(strCompare(quelldatei, zieldatei)) {
+		char output[] = "Quell- und Zieldatei sind gleich.\n";
+		write(2, &output, sizeof(output));
+		return 1;
+	}
+	return mycp(isstdout, quelldatei, zieldatei);
 }
 
 int isStdout(const char * arg) {
@@ -63,6 +68,22 @@ int isStdout(const char * arg) {
 		return 1;
 	}
 	return 0;
+}
+
+int strCompare(const char *str1, const char *str2) {
+	char c1 = *str1;
+	char c2 = *str2;
+	while(c1 != '\0') {
+		if(c1 != c2) {
+			return 0;
+		}
+		c1 = *str1++;
+		c2 = *str2++;
+	}
+	if(c1 != c2) {
+		return 0;
+	}
+	return 1;
 }
 
 int mycp(const int isstdout, const char *quelldatei, const char *zieldatei) {
@@ -102,7 +123,7 @@ int mycp(const int isstdout, const char *quelldatei, const char *zieldatei) {
 	if(isstdout) {
 		dateineu = 1;
 	} else {
-		dateineu = open(zieldatei, O_WRONLY|O_CREAT|O_TRUNC);
+		dateineu = open(zieldatei, O_WRONLY|O_CREAT|O_TRUNC, S_IRWXU|S_IRWXG);
 	}
 	if(dateineu == -1) {
 		char output[] = "Fehler beim oeffnen der Datei.\n";
