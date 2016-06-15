@@ -10,7 +10,7 @@ BIN=bin
 all: clean runmain
 
 runmain: compilemain
-	./$(BIN)/mycp -o /home/peter/workspace/c/betsys/test/10.txt /home/peter/workspace/c/betsys/test/test.txt
+	./$(BIN)/mycp /home/peter/workspace/c/betsys/test/10.txt /home/peter/workspace/c/betsys/test/test.txt
 
 compilemain: makedir
 	$(CC) $(CFLAGS) $(SOURCES) -o $(BIN)/mycp

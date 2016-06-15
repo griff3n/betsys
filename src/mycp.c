@@ -97,7 +97,29 @@ int mycp(const int isstdout, const char *quelldatei, const char *zieldatei) {
 	if(count) {
 		write(1, buffer, count);
 	}
-	//printf("Mitte: %ld\npos: %ld\n", dateiMitte, t);
-
+	write(1,"\n",1);
+	int dateineu;
+	if(isstdout) {
+		dateineu = 1;
+	} else {
+		dateineu = open(zieldatei, O_WRONLY|O_CREAT|O_TRUNC);
+	}
+	if(dateineu == -1) {
+		char output[] = "Fehler beim oeffnen der Datei.\n";
+		write(2, &output, sizeof(output));
+		return 1;
+	}
+	lseek(datei, 0L, SEEK_SET);
+	count = read(datei, buffer, MAXBYTES);
+	while(count) {
+		write(dateineu, buffer, count);
+		count = read(datei, buffer, MAXBYTES);
+	}
+	lseek(datei, -11L, SEEK_END);
+	count = read(datei, buffer, MAXBYTES);
+	lseek(dateineu, -1L, SEEK_END);
+	write(dateineu, buffer, count);
+	close(dateineu);
+	close(datei);
 	return 0;
 }
