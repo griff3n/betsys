@@ -1,37 +1,49 @@
 \newpage
 
-\paragraph{\LARGE Aufgabe 4 - Implementierung Shell}
+\paragraph{\LARGE Aufgabe 9 - Implementierung Shell}
 
 \section{Aufgabenstellung}
-	\begin{quote}
-		
-	\end{quote}
-\newpage
-\section{Aufgabe 4.1}
-	\subsection{Vorbereitung}
+	\subsection{Aufgabe 9.1}
 		\begin{quote}
-			C-Projekt anlegen.
-			Makefile schreiben.
-		\end{quote}
-	\subsection{Durchführung}
-		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
-		\end{quote}
-	\subsection{Fazit}
-		\begin{quote}
-			
+			Informieren Sie sich zun\"achst \"uber der shift-Befehl der Bash. Er erleichtert die L\"osung dieser Aufgabe. Schreiben Sie nun ein Shell-Skript, dem an der Kommandozeile eine beliebige, vorher nicht festgelegte Anzahl von Parametern \"ubergeben wird. Das Skript soll alle Parameter au\ss er dem ersten multiplizieren. Dieses Produkt soll dann durch den ersten Parameter geteilt (ganzzahlige Division) und als Ergebnis ausgegeben werden. Zus\"atzlich soll das Skript seinen Namen (Dateinamen) ausgeben.\\
 		\end{quote}
 
-\section{Aufgabe 4.2}
+\section{Aufgabenstellung}
+	\subsection{Aufgabe 9.2}
+		\begin{quote}
+			Schreiben Sie ein Shell-Skript, das Sie - abh\"angig von der Tageszeit - mit\\ \\
+			''Guten Morgen <Login-Name>'' (von 0 bis 12 Uhr),\\
+			''Guten Tag <Login-Name>'' (von 12 bis 17 Uhr) bzw.\\
+			''Guten Abend <Login-Name>'' (von 17 bis 0 Uhr)\\ \\
+			am Bildschirm begr\"u\ss t. Die Zeichenkette <Login-Name> ist durch den jeweiligen Anmeldenamen am System zu ersetzen.\\
+		\end{quote}
+\newpage
+\section{Aufgabe 9.1}
 	\subsection{Vorbereitung}
 		\begin{quote}
-			keine
+			keine\\
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
+			Code schreiben und dann testen.\\
 		\end{quote}
 	\subsection{Fazit}
 		\begin{quote}
-			
+			\lstinputlisting[firstline=1, lastline=21]{../a1.sh}
+			Zuerst wird mit ''[ ''\$1'' == ' ' ]'' \"uberpr\"uft ob Parameter angegeben wurde. Wenn keine Parameter angegeben sind wird eine Fehlermeldung ausgegeben und das Skript beendet ansonsten wird noch mit ''[ ''\$1'' == 0 ]'' gepr\"uft ob der erste Parameter null ist wenn ja dann wird eine Fehlermeldung ausgegeben und das Skript beendet. Dann wird der wert des ersten Parameters in der Variablen zahl1 gespeichert und eine Variable zahl2 mit dem Wert eins initialisiert dann wird der ''shift'' Befehl ausgef\"uhrt. Das bewirkt das alle Parameter nach links geschoben werden also \$2 wird in \$1 gespeichert \$3 in \$2 gespeichert und so weiter. Dann wird mit ''zahl2=\$((\$zahl2 * \$1))'' die zahl1 mit \$1 multipliziert und wieder in zahl2 gespeichert. Dann wird wieder der ''shift'' Befehl aus gef\"uhrt Die letzten beiden Befehle werden solange wiederholt bis \$1 leer ist. Dann wird zahl2 durch zahl1 geteilt und direkt ausgegeben. In \$0 ist der Dateiname enthalten mit ''\$\{0\#\#*/\}'' wird der Pfad weg geschnitten.\\
+		\end{quote}
+
+\section{Aufgabe 9.2}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			keine\\
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Code schreiben und dann testen.\\
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			\lstinputlisting[firstline=1, lastline=13]{../a2.sh}
+			Zuerst wird mit ''stunde=\$(date +\%H)'' die Stunde gespeichert und mit ''whoami'' der Name gespeichert. Dann wird mit ''[ ''\$stunde'' -lt ''12'' ]'' \"uberpr\"uft ob die ''stunde'' kleiner als 12 ist. Wenn ja dann wird ''Guten Morgen \$name'' ausgegeben wenn nicht wird \"uberpr\"uft ob die ''stunde'' kleiner als 17 ist. Wenn dass zutrifft wird ''Guten Tag \$name'' aus gegeben ansonsten wird ''Guten Abend \$name'' ausgegeben.\\
 		\end{quote}
