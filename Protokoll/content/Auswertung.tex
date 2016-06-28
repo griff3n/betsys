@@ -1,31 +1,26 @@
 \newpage
 
-\paragraph{\LARGE Aufgabe 4 - Implementierung Shell}
+\paragraph{\LARGE Aufgabe 10 - Kernel Treiber}
 
 \section{Aufgabenstellung}
 	\begin{quote}
-		
+		Kompilieren Sie das Modul lkm.c und machen Sie sich mit den Befehlen zum Laden bzw. Entladen von Modulen vertraut.\\ \\
+		\begin{enumerate}
+			\item Vollziehen Sie den Aufbau eines Kernel Moduls nach und erg\"anzen Sie das im Info-Blatt vorgestellte Modul memory.c:\\
+			\item \"Andern Sie die Major Nummer.\\
+			\item Erweitern Sie das Kernel Modul so, dass 256 Byte im Buffer gespeichert werden k\"onnen (antatt 1 Byte).\\
+			\item Erweitern Sie das Kernel Modul so, dass der Speicherinhalt des Buffers byteweise ausgelesen werden kann.\\
+			\item Schreiben Sie ein Programm, dass sowohl die Schreib- als auch die Lesemethode des Kerneltreibers verwendet.\\
+			\item Der zu speichernde Text soll beim Schreiben in den Kernel Space vom Kernel Modul mit Hilfe des printk-Befehls im Syslog-D\"amon ausgegeben werden.\\
+			\item Unter welchen Bedingungen kann der vorgestellt Treiber verwendet werden, um auf reale Hardware zuzugreifen. Welche Anpassungen sind dazu notwendig?\\
+		\end{enumerate}
 	\end{quote}
 \newpage
-\section{Aufgabe 4.1}
+\section{Aufgabe 10.1}
 	\subsection{Vorbereitung}
 		\begin{quote}
 			C-Projekt anlegen.
 			Makefile schreiben.
-		\end{quote}
-	\subsection{Durchführung}
-		\begin{quote}
-			Code schreiben und dann testen bzw debuggen.
-		\end{quote}
-	\subsection{Fazit}
-		\begin{quote}
-			
-		\end{quote}
-
-\section{Aufgabe 4.2}
-	\subsection{Vorbereitung}
-		\begin{quote}
-			keine
 		\end{quote}
 	\subsection{Durchführung}
 		\begin{quote}
