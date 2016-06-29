@@ -35,6 +35,7 @@ module_exit(memory_exit);
 /* Global variables of the driver */
 /* Major number */
 int memory_major = 61;
+static int Device_Open = 0;
 /* Buffer to store data */
 char *memory_buffer;
 
@@ -50,12 +51,12 @@ int memory_init(void) {
 	}
 
 	/* Allocating memory for the buffer */
-	memory_buffer = kmalloc(1, GFP_KERNEL);
+	memory_buffer = kmalloc(256, GFP_KERNEL);
 	if (!memory_buffer) {
 		result = -ENOMEM;
 		goto fail;
 	}
-	memset(memory_buffer, 0, 1);
+	memset(memory_buffer, 0, 256);
 
 	printk("<1>Inserting memory module\n");
 	return 0;
@@ -80,12 +81,22 @@ void memory_exit(void) {
 int memory_open(struct inode *inode, struct file *filp) {
 
 	/* Reset Device */
+
+	int Minor = inode->i_rdev & 0xFF;
+	if ( Device_Open ) {
+		return -EBUSY;
+	}
+	Device_Open++;
+	try_module_get(THIS_MODULE);
 	/* Success */
 	return 0;
 }
 
 int memory_release(struct inode *inode, struct file *filp) {
 	/* release memory allocated for opening the device */
+
+	Device_Open--;
+	module_put(THIS_MODULE);
 	/* Success */
 	return 0;
 }
@@ -111,6 +122,7 @@ ssize_t memory_write( struct file *filp, char *buf,
 	char *tmp;
 
 	tmp=buf+count-1;
+	printk(KERN_INFO tmp);
 	copy_from_user(memory_buffer,tmp,1);
 	return 1;
 }
