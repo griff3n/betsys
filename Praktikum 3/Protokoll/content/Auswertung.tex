@@ -1,0 +1,98 @@
+\newpage
+
+\paragraph{\LARGE Aufgabe 3 - Papierkorb unter Unix}
+\section{Aufgabenstellung allgemein}
+	\begin{quote}
+		Der Papierkorb soll die folgenden Anforderungen erf\"ullen:
+		\begin{enumerate}
+			\item Der Papierkorb ist der Ordner \$HOME/.trashBin\\
+			\item Jede durch den Benutzer ''gel\"oschte'' Datei wird in den Papierkorb\\
+			geschoben, wobei der Name der Datei durch einen eindeutigen Namen\\ der Form 080321195131\_18333.dat ersetzt wird. Die Ziffernfolge am\\
+			Anfang ist ein Zeitstempel, der durch das Kommando date '+\%y\%m\%d\%H\%M\%S'\\
+			erzeugt werden kann. Die Ziffernfolge nach \_ ist die Prozess-ID, 	die als\\
+			Wert in der Shellvariablen \$\$ enthalten ist.\\
+			\item Zur Verwaltung der ''gel\"oschten'' Dateien wird die Verzeichnisdatei\\
+			\$HOME/.trashBin/.dir benutzt. F\"ur jede ''gel\"oschte'' Datei enth"alt sie eine Zeile der Form\\ \\
+			080321195131\_18333.dat! /home/someuser/BS/somefile\\ \\
+			Es ist also der Dateiname im Papierkorb und der urspr\"ungliche volle Pfadname der Datei eingetragen.\\
+		\end{enumerate}
+	\end{quote}
+
+\section{Aufgabe 3.1}
+	\subsection{Aufgabenstellung}
+		\begin{quote}
+			Ein Shellskript delete zum ''L\"oschen''. Dabei wird eine Datei, die als Argument\\
+			\"ubergeben wird, in das Papierkorbverzeichnis verschoben, wobei wie oben\\
+			beschrieben ein neuer (eindeutiger) Name gebildet wird. Die Verzeichnisdatei\\
+			.dir muss nat\"urlich um eine entsprechende Zeile erweitert werden.\\ \\
+		\end{quote}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			Ordner .trashBin erstellen\\ \\
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Skript schreiben und dann testen.\\ \\
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			Zuerst wird mit ''if {[} ! -d ''\$HOME/.trashBin/'' {]}'' gepr\"uft ob der Papierkorb existiert und wenn n\"otig mit mkdir erstellt.\\
+			Und dann wird mit ''if {[} -e ''\$file'' {]}'' gepr\"uft ob die \"ubergebene Datei existiert.\\
+			Dann wird mit ''date=\$(date '+\%y\%m\%d\%H\%M\%S')''\\
+			ein Zeitstempel erzeugt und in die Variable date geschrieben und die Prozess-ID\\
+			wird in der Variable prozessid gespeichert. Mit dem Befehl\\
+			''mv \$file ''\$HOME/.trashBin/\$date''''\_\$prozessid.dat''''\\
+			wird die Datei ''gel\"oscht''.\\
+			Danach wird mit	''echo ''\$date''''\_\$prozessid.dat! \$file'' >> \$HOME/.trashBin/.dir''\\
+			ein Eintrag in die Verzeichnisdatei .dir erzeugt.\\ \\
+		\end{quote}
+
+\section{Aufgabe 3.2}
+	\subsection{Aufgabenstellung}
+		\begin{quote}
+			Sehen Sie eine Ausgabe vor, die den Namen der tempor\"aren Datei im Papierkorb ausgibt.\\ \\
+		\end{quote}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			keine\\ \\
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Skript schreiben und dann testen.\\ \\
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			Mit ''echo ''\$date''''\_\$prozessid.dat'''' wird der Name der tempor\"aren Datei im\\
+			Papierkorb ausgegeben.\\ \\
+		\end{quote}
+\newpage
+\section{Aufgabe 3.3}
+	\subsection{Aufgabenstellung}
+		\begin{quote}
+			Ein Shellskript undelete zum Wiederherstellen einer ''gel\"oschten'' Datei.\\
+			Dem	Skript wird als Argument der Name der Datei im Papierkorb (ohne\\
+			Pfadnamen!) \"ubergeben (also z. B. undelete 070321195131\_18333.dat).\\
+			Die Datei wird dann unter ihrem urspr\"unglichen Pfad wiederhergestellt,\\
+			die Papierkorbdatei gel\"oscht und die entsprechnde Zeile in der Verzeichnisdatei\\
+			entfrent. Existiert der urspr\"ungliche Pfad nicht mehr, so soll eine\\
+			Fehlermeldung ausgegeben werden.\\ \\
+		\end{quote}
+	\subsection{Vorbereitung}
+		\begin{quote}
+			keine\\ \\
+		\end{quote}
+	\subsection{Durchführung}
+		\begin{quote}
+			Skript schreiben und dann testen.\\ \\
+		\end{quote}
+	\subsection{Fazit}
+		\begin{quote}
+			Zuerst wird \"uberpr\"uft ob der Papierkorb existiert. Dann wird getestet ob die \"ubergebene Datei im Papierkorb ist.
+			Wenn ja  dann wird mit ''zeilen=\$(wc -l ''\$HOME/.trashBin/.dir'' | cut -d'' '' -f1)'' die Anzahl der zeilen ermittelt.
+			Danach wird Zeile f\"ur Zeile nach der Datei gesucht.
+			Wenn sie gefunden wurde dann wird gepr\"uft ob das Quellverzeichnichs existiert. Wenn es existiert wird mit mv die gel\"oschte Datei wieder hergestellt ansonsten wird eine Fehlermeldung angezeigt.
+			Wenn die Linie nicht gleich der Datei ist oder das Quellverzeichnichs nicht existiert wird mit ''\$tdir = \$tdir + \$line + ''\textbackslash n\textbackslash c'' die Zeile zwischen gespeichert um am Ende mit
+			''echo \$tdir > ''\$HOME/.trashBin/.dir'''' die .dir zu speichern.
+			
+		\end{quote}
+
