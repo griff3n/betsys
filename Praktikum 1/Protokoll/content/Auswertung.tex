@@ -1,0 +1,326 @@
+\newpage
+
+\paragraph{\LARGE Aufgabe 1 - Einfache Befehle der Shell}
+
+\section{Aufgabe 1.1}
+	\subsection{Aufgabenstellung}
+		Machen Sie sich (auch unter Nutzung des Hilfe-Systems) klar, was folgende Befehle bewirken und wie diese parametrisiert werden k\"onnen:
+		\begin{itemize}
+			\item man
+			\item pwd
+			\item ls
+			\item ls -l
+			\item ls -al
+			\item cd
+			\item mkdir
+			\item rm
+			\item cp
+			\item mv
+			\item more
+			\item tar
+			\item gzip
+			\item top
+			\item uname
+		\end{itemize}
+		Was bewirkt der folgende Befehl?\\
+		find . | xargs grep testString
+		\newpage
+	\subsection{Vorbereitung}
+		Installation von MiKTex 2.9 + fehlender Pakete und ein LaTex-Editor. Erstellung eines Git-Repos in dem das Grundger\"ust des Protokolls enhalten ist.
+	\subsection{Durchführung}
+		Ergebnisse recherchieren und protokollieren.
+	\subsection{Fazit}
+		\begin{itemize}
+			\item man\\
+			Mit den Befehl ''man'' kann man Manpages \"offen. Manpages sind Hilfeseiten.\\ \\
+			Funktion:\\
+			man [OPTION] THEMA\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-k Schl\"usselwort & zur Suche von Manual-Seiten mit einen bestimmten Schl\"usselwort \\
+				-f Thema & Kurzinfo zum gew\"ahlten Thema \\
+				-t > ausgabe.ps & Erzeugt ein formatiertes Postscript-Dokument des Themas\\ \\
+			\end{tabular}
+			Themenbereich:\\
+			In den Manpages ist ha\"aufig eine man-Nummer hinter dem Kommando angegeben. Es gibt die Themenbereiche 1 bis 9 und n.
+			\begin{itemize}
+				\item (1) Benutzerkommandos
+				\item (2) Systemaufruf
+				\item (3) Funktionen der Programmiersprache C
+				\item (4) Dateiformate
+				\item (5) Konfigurationsdateien
+				\item (6) Spiele
+				\item (7) Diverses
+				\item (8) Kommandos zur Systemadministration
+				\item (9) Kernelfunktionen
+				\item (n) Neue Kommandos
+			\end{itemize}
+			Die Eingabe f\"ur den Aufruf von less mit dem Thema (1) sieht so aus: \begin{quote}
+				man 1 less
+			\end{quote}
+			\newpage
+			\item pwd\\
+			\textbf{p}rint \textbf{w}orkink \textbf{d}irectory gibt das aktuelle Verzeichnis aus, in dem man sich befindet.\\ \\
+			Funktion:\\
+			pwd [OPTION]\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-P & ein etwaiger symbolischer Link wird aufgel\"ost\\
+				-L & ein etwaiger symbolischer Link wird nicht aufgel\"ost,\\
+				 & selbst wenn die Option ''physical'' in der Shell gesetzt ist\\ \\
+			\end{tabular}
+			\item ls \\
+			\textbf{ls} steht f\"ur \textbf{l}i\textbf{s}t und zeigt den Inhalt eines Verzeichnisses bzw. Ordners an.\\ \\
+			Funktion:\\
+			ls [OPTION] [VERZEICHNIS]\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-a & listet Namen die mit .(Punkt) beginnen mit auf\\
+				-l & Datei-Informationen in Langform ausgeben\\
+				-c & Datum der letzten \"Anderung\\
+				-C & Namen nebeneinander ausgeben (Standard)\\
+				-d & Verzeichnisse und keine Inhalte anzeigen\\
+				-h & gibt in Kombination mit -l die Gr\"oße in einem\\
+				 & für Menschen besser lesbaren Format aus\\
+				-i & Inode-Nummer vor Name ausgeben\\
+				-m & Namen in einer Zeile ausgeben\\
+				-R & Auch in Unterverzeichnisse absteigen\\ \\
+			\end{tabular}
+			\item ls -l\\
+			Gibt die Datei-Informationen in Langform aus.\\ \\
+			\item ls -al\\
+			Gibt die Datei-Informationen in Langform aus (auch Versteckte Dateien).\\ \\
+			\newpage
+			\item cd\\
+			\textbf{cd} steht f\"ur \textbf{c}hange \textbf{d}irectory und dient zum Wechsel in ein (Unter-)Verzeichnis.\\ \\
+			Funktion:\\
+			cd [OPTION] VERZEICHNIS\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-L & cd folgt der logischen Verzeichnisstruktur (Standard)\\
+				-P & cd folgt der physischen Verzeichnisstruktur\\ \\
+			\end{tabular}
+			\item mkdir\\
+			\textbf{mkdir} steht f\"ur \textbf{m}a\textbf{k}e \textbf{dir}ectory und dient zum Anlegen von einem oder mehreren Verzeichnissen.\\  \\
+			Funktion:\\
+			mkdir [OPTION] VERZEICHNISNAME\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-m oder --mode=MODUS & Zugriffsrechte setzen wie bei chmod\\
+				-p oder --parents & kein Fehler, wenn vorhanden;\\
+				 & übergeordnete Verzeichnissen erzeugen, wenn notwendig\\
+				-v oder --verbose & eine Meldung beim erstellen ausgeben\\ \\
+			\end{tabular}
+			\item rm\\
+			\textbf{rm} steht f\"ur \textbf{r}e\textbf{m}ove und l\"oscht Dateien oder auch komplette Verzeichnisse. !! Nicht Wiederherstellbar\\ \\
+			Funktion:\\
+			rm [OPTION] DATEI/ORDNER\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-i oder --interactive & vor dem L\"oschen eine Nachfrage ''J/N`` ausl\"osen\\
+				--no-preserve-root & ''/'' nicht besonders behandeln\\
+				--preserve-root & nicht rekursiv auf ''/'' arbeiten\\
+				--one-file-system & beim rekursiven Entfernen einer Verzeichnishierarchie die\\
+				 & Verzeichnisse überspringen, die sich auf einem anderen Gerät\\
+				 & als der Parameter befinden\\
+				-v oder --verbose & durchgef\"uhrte T\"atigkeiten erkl\"aren\\
+				-r oder -R oder --recursive & Verzeichnisse und deren Inhalte rekursiv entfernen\\
+				-f oder --force & keine Nachfrage beim L\"oschen\\ \\
+			\end{tabular}
+			\newpage
+			\item cp\\
+			\textbf{cp} steht für \textbf{c}o\textbf{p}y und ist der Befehl zum Kopieren von Dateien und Verzeichnissen.\\ \\
+			Funktion:\\
+			cp [OPTION] QUELLE ZIEL\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-a oder --archive & Beibehaltung von Besitzer-, Gruppen- und\\
+				& Zugriffsrechten und Erstellungs-, Modifikations- und\\
+				& Zugriffsdaten (entspricht -dR --preserve=all)\\
+				-b oder --backup & Sichert Dateien vor dem \"Uberschreiben,\\
+				& wenn diese unterschiedlich sind\\
+				-d & erh\"alt symbolische Links, folgt ihnen aber nicht beim\\
+				& Kopieren (entspricht -P --preserve=links)\\
+				-i oder --interactive & fragt vor \"Uberschreiben nach\\
+				-l oder --link & kopiert nicht, sondern erstellt harten Link\\
+				-n oder --no-clobber & niemals vorhandene Dateien\\
+				& \"uberschreiben (-i wird wirkungslos)\\
+				-p oder & erh\"alt Standard-Dateiattribute\\
+				 --preserve=mode,ownership,timestamps & wie Zeitpunkt des letzten Schreibzugriffs\\
+				-P oder --no-dereference & Symbolische Links als symbolische Links kopieren,\\
+				& statt den Links in der Quelle zu folgen\\
+				-r oder -R oder --recursive & Verzeichnisse rekursiv kopieren\\
+				& (Unterverzeichnisse eingeschlossen)\\
+				-s oder --symbolic-link & kopiert nicht, sondern erstellt symbolischen Link\\
+				-u oder --update & kopiert nur, wenn Zieldatei \"alter als Quelldatei\\
+				-v oder --verbose & zeigt den Kopierfortschritt an\\ \\
+			\end{tabular}
+			\item mv\\
+			\textbf{mv} steht für \textbf{m}o\textbf{v}e und verschiebt eine Datei, wobei der Befehl teilweise auch zum Umbenennen verwendet wird.\\ \\
+			Funktion:\\
+			mv [OPTION] QUELLE ZIEL\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-i oder --interactive & fragt vor \"Uberschreiben nach\\
+				-u oder --update & verschiebt nur, wenn Zieldatei \"alter als Quelldatei\\
+				-v oder --verbose & zeigt den Verschiebe-Fortschritt an\\ \\
+			\end{tabular}
+			\newpage
+			\item more\\
+			\textbf{more} ist ein Pager zum Anzeigen von (Text-)Dateien in der Kommandozeile.\\ \\
+			Funktion:\\
+			more [OPTION] DATEI\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-num Zahl & Es werden ''Zahl'' Zeilen pro Seite angezeigt (anstatt volle Seite).\\
+				-l & Das Steuerzeichen für Seitenvorschub wird ignoriert.\\
+				-f & Ausgabe wird nach Textzeilen statt Bildschrimzeile\\
+				& berechnet, d.h. kein Zeilenumbruch.\\
+				-p & Seiten werden beim Weiterbl\"attern nicht gescrollt,\\
+				& sondern der Bildschirm wird komplett neu aufgebaut.\\
+				-c & Seiten werden beim Weiterbl\"attern nicht gescrollt,\\
+				& sondern von oben her neu Zeilenweise neu aufgebaut.\\
+				-s & Mehrere aufeinanderfolgende Leerzeilen zu einer Zusammenfassen.\\
+				-u & Es werden keine Zeichen unterstrichen.\\
+				+/Muster & Die Datei wird erst ab der 1. gefunden Zeichenkette ''Muster'' angezeigt.\\
+				+Zahl & Die Datei wird erst ab der Zeilennummer ''Zahl'' angezeigt.\\ \\
+			\end{tabular}
+			\newpage
+			\item tar\\
+			\textbf{tar} steht f\"ur \textbf{T}ape \textbf{ar}chiver und ist ein Werkzeug mit dem Dateien archiviert werden k\"onnen.\\ \\
+			Funktion:\\
+			tar [OPTION] DATEI(EN)\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-c & Ein neues Archiv erzeugen.\\
+				-d & Dateien im Archiv und im Dateisystem miteinander vergleichen.\\
+				-f & Archiv in angegebene Datei schreiben. / Daten aus angegebener Datei lesen.\\
+				-k & Das \"Uberschreiben existierender Dateien beim Extrahieren\\
+				& aus einem Archiv verhindern.\\
+				-p & Zugriffsrechte beim Extrahieren erhalten.\\
+				-r & Dateien an ein bestehendes Archiv anh\"angen.\\
+				-t & Inhalt eines Archivs anzeigen.\\
+				-u & Nur Dateien anh\"angen, die jünger sind als ihre Archiv-Version.\\
+				-v & Ausf\"uhrliche Ausgabe aktivieren.\\
+				-w & Jede Aktion best\"atigen.\\
+				-x & Dateien aus einem Archiv extrahieren.\\
+				-z & Archiv zus\"atzlich mit gzip (de)komprimieren.\\
+				-A & Inhalt eines bestehenden Archivs an ein anderes Archiv anh\"angen.\\
+				-C & Wechselt in das angegebene Verzeichnis. Das Archiv wird dann dort entpackt.\\
+				-M & Mehrteiliges Archiv anlegen/anzeigen/extrahieren.\\
+				-L & Medium wechseln, wenn ZAHL KBytes geschrieben sind.\\
+				-W & Archiv nach dem Schreiben pr\"ufen.\\ \\ 
+			\end{tabular}
+			\newpage
+			\item gzip\\
+			\textbf{gzip} steht f\"ur \textbf{G}UU \textbf{zip} und ist ein Werkzeug mit dem Dateien archiviert werden k\"onnen.\\ \\
+			Funktion:\\
+			gzip [OPTION] DATEI(EN)\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-1 ... -9 & Gibt den Komprimierungsgrad an. 1 ist die schlechteste aber schnellste\\
+				& Komprimierung, 9 die beste aber langsamste Komprimierung. Voreinstellung ist 5.\\
+				-r & Dateien werden einzeln rekursiv in allen\\
+				& Unterverzeichnissen komprimiert bzw. dekomprimiert.\\
+				-f & Eventuell vorhandene Dateien werden ohne R\"uckfrage \"uberschrieben.\\
+				-d & Decompress, d.h. die angegebene Datei (Archiv) wird in das\\
+				& aktuelle Verzeichnis entpackt.\\
+				-k & Die Originaldatei wird beibehalten und nicht gel\"oscht.\\
+				-l & Gibt Details zum Archiv aus.\\
+				-c & Schreibt auf die Standardausgabe (also in der Regel den Bildschirm).\\
+				-q & Unterdr\"uckt alle (Warn-) Meldungen.\\
+				-t & Testet die Integrit\"at des Archivs.\\
+				-h & Zeigt eine vollst\"andige \"Ubersicht über alle Optionen.\\ \\ 
+			\end{tabular}
+			\item top\\
+			Der Befehl \textbf{top} zeigt eine dynamische \"Ubersicht der auf dem System laufenden Prozesse und die Systemressourcen an\\ \\
+			Funktion:\\
+			top [OPTION]\\ \\
+			\begin{tabular}{ll}
+				Option & Bedeutung \\
+				-b & Startet top im ''Batch''-Modus. Tastatureingaben werden\\
+				& ignoriert und die Ausgabe ist frei von\\
+				& Terminal-Kontroll-Sequenzen.\\
+				-c & Zeigt das vollst\"andige Kommando inklusive Pfadangaben an\\
+				-d ss.tt & Wiederholrate in Sekunden * 1/100 Sekunden\\
+				.i & Prozesse, die den Status ''idle'' besitzen, die also ruhen,\\
+				& werden nicht angezeigt\\
+				-n ANZAHL & Beschr\"ankt die Ausgabe auf die angegebene Zahl\\
+				& von Iterationen.\\
+				-u BENUTZERNAME bzw. UID & Zeigt nur die Prozesse des entsprechenden Benutzers an\\
+				-p PID1 -p PID2 ... & Zeigt nur Prozesse mit den angegeben Prozess-IDs an\\
+				-S & Zeigt die absolute Zeit an, seit der Prozess gestartet wurde\\ \\
+			\end{tabular}
+			\newpage
+			\item uname\\
+			Mit dem Befehl \textbf{uname} kann man sich einige Systeminformationen zum Kernel ausgeben lassen.\\
+			Funktion:\\
+			uname [OPTION]...\\ \\
+			\begin{tabular}{lll}
+				Option & & Bedeutung \\
+				-a & --all & alle Informationen\\
+				-s & --kernel-name & Namen des Kernels\\
+				-n & --nodename &  Netzwerknamen der Maschine (entspricht dem Befehl hostname)\\
+				-r & --release & Release-Nummer des Betriebsystems\\
+				-v & --kernel-version & Kernel-Version\\
+				-m & --machine & Maschinen Architektur (entspricht dem Befehl arch)\\
+				-p & --processor & Prozessor Typ\\
+				-i & --hardware-platform & Hardware Plattform\\
+				& --help & Hilfefunktion abrufen\\ \\
+			\end{tabular}
+		\end{itemize}
+		Der Befehl ''find . | xargs grep testString'' bewirkt das im aktuelle Verzeichnis in allen Dateien nach testString gesuscht wird
+	\subsection{Quellen}
+		\begin{itemize}
+			\item https://wiki.ubuntuusers.de/man/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/pwd/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/ls/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/cd/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/mkdir/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/rm/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/cp/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/mv/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/more/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/tar/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/gzip/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/top/; Aufgerufen am 12.04.2016
+			\item https://wiki.ubuntuusers.de/uname/; Aufgerufen am 12.04.2016
+		\end{itemize}
+\section{Aufgabe 1.2}
+	\subsection{Aufgabenstellung}
+		Legen Sie eine sinnvolle Verzeichnisstruktur f\"ur das Praktikum in Ihrem Home-Verzeichnis an und wechseln Sie in Ihr Arbeitsverzeichnis f\"ur diese \"Ubung. Kopieren Sie die Datei file.tar.gz aus Ilias in Ihr Arbeitsverzeichnis und entpacken Sie die Datei dort. Machen Sie sich anhand der entpackten Dateien mit dem Metazeichen vertraut. Bestimmen Sie mit dem ls-Kommando die oberste Datei in Ihren Arbeitsverzeichnis und l\"oschen Sie diese mit rm (verwenden Sie f\"ur die Bestimmung der obersten Datei den Befehl head).
+	\subsection{Vorbereitung}
+		Manpage zu head lesen.
+	\subsection{Durchführung}
+		cd ~/workspace/c/\\
+		git clone git@git01-ifm-min.ad.fh-bielefeld.de:pdick4/betsys.git\\
+		cd betsys\\
+		git checkout p01\\
+		mkdir nr2\\
+		file.tar.gz aus Ilias herunterladen\\
+		mv ~/Downloads/file.tar.gz ~/workspace/c/betsys/nr2/\\
+		cd nr2\\
+		tar -xzf file.tar.gz\\
+		ls | head -n 1\\
+		rm 1file1\\
+	\subsection{Fazit}
+		1file1 war die oberste Datei.
+\newpage
+\section{Aufgabe 1.3}
+\subsection{Aufgabenstellung}
+	Laden Sie die Datei dirStruct.tar.gz aus Ilias und entpacken Sie die Datei. L\"oschen Sie mit rm alle entpackten Dateien und Verzeichnisse. Entpacken Sie dirStruckt.tar erneut und wechseln Sie in das Verzeichnis ./rootTest/dir1. Was passiert, wenn Sie alle Dateien mit der Endung .txt l\"oschen wollen und alsBefehl versehentlich rm * .txt (Leerzeichen zwischen ,*' und ''txt'') eingeben? Ist das Ergebnis r\"uckg\"anig zu machen?
+\subsection{Vorbereitung}
+	keine
+\subsection{Durchführung}
+	cd ~/workspace/c/betsys/\\
+	mkdir nr3\\
+	dirStruct.tar.gz aus Ilias herunterladen\\
+	cd nr3\\
+	mv ~/Downloads/dirStruct.tar.gz ~/workspace/c/betsys/nr3/\\
+	tar -xzf dirStruct.tar.gz\\
+	rm -r rootTest\\
+	tar -xzf dirStruct.tar.gz\\
+	cd ./rootTest/dir1\\
+	rm * .txt\\
+\subsection{Fazit}
+	Es werden alle Dateien die im Verzeichnis ./rootTest/dir1 sind gel\"oscht. Das Ergebnis kann nicht r\"uckg\"angig gemacht werden.
