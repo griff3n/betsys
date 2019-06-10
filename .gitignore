@@ -1,8 +1,28 @@
+/Praktikum 1/Protokoll/*.aux
+
+/Praktikum 1/Protokoll/*.log
+
+/Praktikum 1/Protokoll/*.out
+
+/Praktikum 1/Protokoll/*.pdf
+
+/Praktikum 1/Protokoll/*.synctex.gz
+
+/Praktikum 1/Protokoll/*.toc
+
+
 /Protokoll/*.aux
+
 /Protokoll/*.log
+
 /Protokoll/*.out
+
 /Protokoll/*.pdf
+
 /Protokoll/*.synctex.gz
+
 /Protokoll/*.toc
+
 /bin/
+
 /Default/
