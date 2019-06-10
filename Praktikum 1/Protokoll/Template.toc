@@ -1,7 +1,0 @@
-\select@language {ngerman}
-\contentsline {paragraph}{\nonumberline \relax \fontsize {17.28}{22}\selectfont Aufgabe 10 - Kernel Treiber}{3}{section*.3}
-\contentsline {section}{\numberline {1}Aufgabenstellung}{3}{section.1}
-\contentsline {section}{\numberline {2}Aufgabe 10.1}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Vorbereitung}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Durchf\IeC {\"u}hrung}{4}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Fazit}{4}{subsection.2.3}
